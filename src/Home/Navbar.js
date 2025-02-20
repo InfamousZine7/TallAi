@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"; // Import Link from React Router
 import account from "../Assets/Account-Login.svg"; // Ensure this path is correct
 
 const navigation = [
-  { name: "Dashboard", path: "/home", current: false }, // Updated path to point to /home
+  { name: "Dashboard", path: "/home", current: false },
   { name: "Invoice to Tally", path: "../Call records/Callrecords", current: false },
-  { name: "Data Visualization", path: "/data-visualization", current: false },
-  { name: "Call Records", path: "/call-records", current: false }, // Update to use path
+  { name: "Data Visualization", path: "/buyer-seller-chart", current: false }, // Updated path
+  { name: "Call Records", path: "/call-records", current: false },
 ];
 
 function classNames(...classes) {
@@ -29,6 +29,7 @@ export default function Navbar() {
               <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-[open]:block" />
             </DisclosureButton>
           </div>
+
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
               <img
@@ -56,6 +57,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>
+
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
@@ -84,26 +86,17 @@ export default function Navbar() {
                 className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-none"
               >
                 <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Your Profile
                   </a>
                 </MenuItem>
                 <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Settings
                   </a>
                 </MenuItem>
                 <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Sign out
                   </a>
                 </MenuItem>
@@ -112,7 +105,7 @@ export default function Navbar() {
 
             {/* Register Button */}
             <Link
-              to="/signin" // Navigate to the signup page
+              to="/signin"
               className="ml-4 rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
               Register
@@ -127,7 +120,7 @@ export default function Navbar() {
             <DisclosureButton
               key={item.name}
               as={Link}
-              to={item.path} // Use Link for the mobile menu as well
+              to={item.path}
               className={classNames(
                 item.current
                   ? "bg-gray-900 text-white"
